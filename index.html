@@ -1,98 +1,302 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student Demo Project</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f0f8ff;
-            color: #333;
-        }
-
-        h1 {
-            color: darkblue;
-            text-align: center;
-        }
-        h2 {
-            color: darkgreen;
-        }
-        p {
-            font-size: 16px;
-            line-height: 1.5;
-        }
-
-        ul,ol {
-            margin-left: 20px;
-        }
-        table {
-            width: 50%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-        table, th, td {
-            border: 1px solid #000;
-            padding: 8px;
-            text-align: center;
-        }
-        th { 
-            background-color: #add8e6;
-        }
-        img {
-            display: block;
-            margin: 20px auto;
-            padding: 10px 15px;
-            background-color: #4caf50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        button:hover {
-            background-color: #45a049;
-        }
-        a {
-            color: darked;
-            text-decoration: none;
-        }
-        a:hover {
-            text-decoration: underline;
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MyShop - Amazon Style Homepage</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <h1>Student-Demo Project</h1>
-    <p>This is my first Git Repository project. It includes HTML, CSS, AND JavaScript.</p>
-    <p><strong>Author:</strong> Muhammad Wali</p>
-    <h2>My Learning List:</h2>
-    <ul>
-        <li>HTML</li>
-        <li>CSS</li>
-        <li>JavaScript</li>
-        <li>Git & GitHub</li>
-    </ul>
 
-    <h2>Steps to learn:</h2>
-    <ol>
-        <li>Start with HTML</li>
-        <li>Learn CSS styling</li>
-        <li>Add JavaScript interactions</li>
-        <li>Upload to GitHub Pages</li>
-    </ol>
+  <!-- Header -->
+  <header class="header">
+    <div class="logo">MyShop</div>
 
-    <h2>My Team:</h2>
-    <table>
-        <tr>
-            <th>Name</th>
-            <th>Age</th>
-            <th>City</th>
-        </tr>
-        <tr>
-            <td>Ali</td>
-            <td>20</td>
-            <td>Karachi</td>
-        </tr>
-    
-    
+    <div class="search-box">
+      <input type="text" placeholder="Search products...">
+      <button>Search</button>
+    </div>
 
+    <div class="nav-right">
+      <a href="#">Login</a>
+      <a href="#">Cart</a>
+    </div>
+  </header>
+
+  <!-- Categories Navigation -->
+  <nav class="categories">
+    <a href="#">Fashion</a>
+    <a href="#">Mobiles</a>
+    <a href="#">Electronics</a>
+    <a href="#">Beauty</a>
+    <a href="#">Home</a>
+    <a href="#">Grocery</a>
+    <a href="#">Books</a>
+    <a href="#">Toys</a>
+  </nav>
+
+  <!-- Hero Banner -->
+  <section class="hero">
+    <img src="https://via.placeholder.com/1200x400" alt="Hero Banner">
+  </section>
+
+  <!-- Featured Products -->
+  <section class="products-section">
+    <h2>Featured Products</h2>
+    <div class="products">
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>Smart Watch</h3>
+        <p>$29.99</p>
+        <button onclick="addToCart('Smart Watch',29.99)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>Headphones</h3>
+        <p>$19.99</p>
+        <button onclick="addToCart('Headphones',19.99)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>Mobile Phone</h3>
+        <p>$99.99</p>
+        <button onclick="addToCart('Mobile Phone',99.99)">Add to Cart</button>
+      </div>
+
+      <div class="product-card">
+        <img src="https://via.placeholder.com/200" alt="">
+        <h3>Bluetooth Speaker</h3>
+        <p>$39.99</p>
+        <button onclick="addToCart('Bluetooth Speaker',39.99)">Add to Cart</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Deals Section -->
+  <section class="deals-section">
+    <h2>Best Deals</h2>
+    <div class="deals">
+      <div class="deal-card">
+        <img src="https://via.placeholder.com/150" alt="">
+        <h4>50% Off Headphones</h4>
+      </div>
+      <div class="deal-card">
+        <img src="https://via.placeholder.com/150" alt="">
+        <h4>Buy 1 Get 1 Free T-Shirts</h4>
+      </div>
+      <div class="deal-card">
+        <img src="https://via.placeholder.com/150" alt="">
+        <h4>30% Off Mobiles</h4>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-section">
+      <h4>Get to Know Us</h4>
+      <p>About Us</p>
+      <p>Careers</p>
+      <p>Blog</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Help</h4>
+      <p>Customer Service</p>
+      <p>Shipping</p>
+      <p>Returns</p>
+    </div>
+
+    <div class="footer-section">
+      <h4>Connect</h4>
+      <a href="#">Facebook</a>
+      <p href="#">Instagram</p>
+      <p href="#">Twitter</p>
+    </div>
+  </footer>
+
+  <!-- JS for Cart -->
+  <script src="cart.js"></script>
+
+<style>
+/* Global */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #f2f2f2;
+}
+
+/* Header */
+.header {
+  background: #131921;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.search-box {
+  display: flex;
+  flex: 1;
+  max-width: 600px;
+  margin: 0 20px;
+}
+
+.search-box input {
+  width: 100%;
+  padding: 8px;
+  border: none;
+  border-radius: 2px 0 0 2px;
+}
+
+.search-box button {
+  padding: 8px 15px;
+  background: #febd69;
+  border: none;
+  cursor: pointer;
+  border-radius: 0 2px 2px 0;
+}
+
+.nav-right a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+/* Categories */
+.categories {
+  background: #232f3e;
+  padding: 10px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.categories a {
+  color: white;
+  margin-right: 20px;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+/* Hero */
+.hero img {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Products */
+.products-section {
+  padding: 20px;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.product-card {
+  background: white;
+  padding: 15px;
+  width: 220px;
+  text-align: center;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+}
+
+.product-card button {
+  margin-top: 10px;
+  padding: 7px 10px;
+  background: #ffa41c;
+  border: none;
+  cursor: pointer;
+  border-radius: 3px;
+}
+
+/* Deals */
+.deals-section {
+  background: #fff8e1;
+  padding: 20px;
+}
+
+.deals {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.deal-card {
+  background: white;
+  padding: 10px;
+  width: 180px;
+  text-align: center;
+  border-radius: 5px;
+  transition: transform 0.3s;
+}
+
+.deal-card:hover {
+  transform: translateY(-5px);
+}
+
+/* Footer */
+.footer {
+  background: #232f3e;
+  color: white;
+  display: flex;
+  justify-content: space-around;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.footer-section h4 {
+  margin-top: 0;
+}
+
+.footer-section p {
+  margin: 5px 0;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .products, .deals {
+    justify-content: center;
+  }
+
+  .search-box {
+    flex-direction: column;
+  }
+
+  .search-box input, .search-box button {
+    width: 100%;
+    margin: 5px 0;
+  }
+  </style>
+  <script>
+
+function addToCart(name, price) {
+  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+  cart.push({ name, price });
+  localStorage.setItem('cart', JSON.stringify(cart));
+  alert(name + " added to cart!");
+}
+</script>
+</body>
+</html>
